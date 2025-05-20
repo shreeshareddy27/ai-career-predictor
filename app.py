@@ -1,11 +1,11 @@
 import streamlit as st
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+from keras.models import load_model
+from keras.preprocessing.sequence import pad_sequences
 import pickle
 
 # Load tokenizer and model
-model = load_model("career_model.keras")
+model = load_model("career_model.keras", compile=False)  # ✅ Add compile=False
 with open('tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
 
